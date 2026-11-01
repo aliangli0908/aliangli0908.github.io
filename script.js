@@ -9,7 +9,7 @@
       navLabel: 'Main navigation', openNavigation: 'Open navigation', closeNavigation: 'Close navigation',
       languageLabel: 'Choose language', filterLabel: 'Filter publications',
       waveformCaption: 'My name, in sound.', waveformAlt: 'Waveform of Aliang Li’s spoken name',
-      navAbout: 'About', navResearch: 'Research', navPublications: 'Publications', navTalks: 'Talks', navEducation: 'Education', navContact: 'Contact',
+      navAbout: 'About', navResearch: 'Research', navPublications: 'Publications', navTalks: 'Talks', navHonors: 'Honors', navContact: 'Contact',
       heroEyebrow: 'LINGUISTICS · LANGUAGE & CHANGE', heroPrefix: "Hello, I'm", exploreResearch: 'Explore my research', viewPublications: 'Publications',
       sectionAboutSmall: 'ABOUT', sectionAbout: 'About me', atAGlance: 'AT A GLANCE', fieldPosition: 'POSITION', fieldInstitution: 'AFFILIATION', fieldDegree: 'DOCTORATE',
       sectionResearchSmall: 'RESEARCH', sectionResearch: 'Research interests', researchNote: 'Historical comparison, typological analysis, and experimental evidence.', languagesLabel: 'LANGUAGES IN MY RESEARCH',
@@ -19,7 +19,7 @@
       types: {article: 'Research article', review: 'Book review'}, accepted: 'Accepted',
       sectionTalksSmall: 'PRESENTATIONS', sectionTalks: 'Selected talks', talksNote: 'Conference presentations and workshops.',
       showAllTalks: 'View all presentations', showFewerTalks: 'Show fewer presentations',
-      sectionEducationSmall: 'EDUCATION', sectionEducation: 'Education & training', educationNote: 'Doctoral training in China and France, following earlier study at Yunnan Minzu University.', awardsHeading: 'Selected academic honors',
+      sectionHonorsSmall: 'HONORS', sectionHonors: 'Selected academic honors',
       sectionContactSmall: 'CONTACT', contactHeading: 'Get in touch', contactDescription: 'I welcome conversations on research, language data and academic collaboration.', emailLabel: 'EMAIL',
       footerCaption: 'Language in structure, history and sound.', backToTop: 'Back to top'
     },
@@ -28,7 +28,7 @@
       navLabel: '主导航', openNavigation: '打开导航菜单', closeNavigation: '关闭导航菜单',
       languageLabel: '切换网站语言', filterLabel: '筛选论文',
       waveformCaption: '我的名字，化作声音。', waveformAlt: '李阿亮姓名的语音波形图',
-      navAbout: '关于', navResearch: '研究方向', navPublications: '学术论文', navTalks: '学术报告', navEducation: '教育经历', navContact: '联系',
+      navAbout: '关于', navResearch: '研究方向', navPublications: '学术论文', navTalks: '学术报告', navHonors: '学术荣誉', navContact: '联系',
       heroEyebrow: '语言学 · 结构、演变与习得', heroPrefix: '你好，我是', exploreResearch: '了解我的研究', viewPublications: '阅读学术成果',
       sectionAboutSmall: '关于', sectionAbout: '关于我', atAGlance: '个人信息', fieldPosition: '现任职务', fieldInstitution: '工作单位', fieldDegree: '博士学位',
       sectionResearchSmall: '研究', sectionResearch: '研究方向', researchNote: '融合历时比较、类型分析与实验验证的研究路径。', languagesLabel: '主要研究语言',
@@ -38,7 +38,7 @@
       types: {article: '研究论文', review: '书评'}, accepted: '已录用',
       sectionTalksSmall: '学术报告', sectionTalks: '学术报告', talksNote: '国际及国内学术会议报告选录。',
       showAllTalks: '展开全部学术报告', showFewerTalks: '收起部分学术报告',
-      sectionEducationSmall: '教育经历', sectionEducation: '教育与研修经历', educationNote: '浙江大学博士阶段及法国联合培养经历，以及云南民族大学的早期学习。', awardsHeading: '部分学术荣誉',
+      sectionHonorsSmall: '荣誉', sectionHonors: '学术荣誉',
       sectionContactSmall: '联系', contactHeading: '保持联系', contactDescription: '欢迎就语言学研究、语料材料及学术合作交流。', emailLabel: '电子邮箱',
       footerCaption: '在结构、历史与声音中理解语言。', backToTop: '返回顶部'
     }
@@ -162,8 +162,7 @@
     more.classList.toggle('hidden',site.talks.length<=4);
   }
 
-  function renderEducation() {
-    $('#education-list').innerHTML=(site.education||[]).map(item=>`<article class="education-item"><span class="education-dates">${esc(local(item.dates))}</span><div><h3>${esc(local(item.award))}</h3><p class="education-institution">${esc(local(item.institution))}</p>${local(item.detail)?`<p class="education-detail">${esc(local(item.detail))}</p>`:''}</div></article>`).join('');
+  function renderHonors() {
     $('#awards-list').innerHTML=(site.awards||[]).map(item=>`<div class="award-item"><span>${esc(item.year)}</span><p>${esc(local(item.title))}</p></div>`).join('');
     $('.awards-block').classList.toggle('hidden',!(site.awards||[]).length);
   }
@@ -177,7 +176,7 @@
     $('#social-links').innerHTML=names.map(([key,label])=>({label,url:safeUrl(p.links?.[key])})).filter(l=>l.url)
       .map(l=>`<a target="_blank" rel="noopener noreferrer" href="${esc(l.url)}">${esc(l.label)} ↗</a>`).join('');
   }
-  function render() {renderLabels();renderProfile();renderResearch();renderPublications();renderTalks();renderEducation();renderContact();}
+  function render() {renderLabels();renderProfile();renderResearch();renderPublications();renderTalks();renderHonors();renderContact();}
   function closeMenu() {const menu=$('#primary-nav'),toggle=$('#menu-toggle');menu.classList.remove('nav-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label',copy().openNavigation);}
 
   const params=new URLSearchParams(location.search),urlLang=params.get('lang');
@@ -204,7 +203,7 @@
       const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio);
       if(visible.length){const id=visible[0].target.id;$$('#primary-nav a').forEach(link=>link.classList.toggle('active',link.hash==='#'+id));}
     },{rootMargin:'-15% 0px -65% 0px',threshold:0});
-    ['about','research','publications','talks','education','contact'].forEach(id=>{const e=document.getElementById(id);if(e)observer.observe(e);});
+    ['about','research','publications','talks','honors','contact'].forEach(id=>{const e=document.getElementById(id);if(e)observer.observe(e);});
   }
   render();
 })();

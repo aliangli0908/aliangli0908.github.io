@@ -297,14 +297,7 @@ html[lang="zh-CN"] .name-waveform figcaption { font-style: normal; }
 .talks-content .update-item h3 { font-size: 20px; line-height: 1.5; }
 .show-more { display: inline-flex; padding: 11px 2px 5px; margin-top: 15px; border: 0; border-bottom: 1px solid #7c9a87; background: transparent; color: var(--green); font-size: 12px; font-weight: 700; cursor: pointer; }
 .show-more:hover { color: #14372b; }
-.education-list { border-top: 1px solid var(--border); }
-.education-item { display: grid; grid-template-columns: 166px minmax(0, 1fr); gap: 26px; padding: 29px 0; border-bottom: 1px solid var(--border); }
-.education-dates { color: #789284; font: 500 22px/1.35 var(--font-serif); }
-.education-item h3 { color: var(--ink-strong); font: 500 25px/1.32 var(--font-serif); margin: 0 0 8px; }
-.education-institution { margin: 0; color: #4f6659; font-size: 14px; }
-.education-detail { margin: 9px 0 0; color: #889389; font-size: 12px; }
-.awards-block { margin-top: 58px; padding: 31px 36px 35px; border: 1px solid var(--border); background: #faf9f4; }
-.awards-block h3 { font: 500 25px var(--font-serif); color: var(--ink-strong); margin: 0 0 24px; }
+.awards-block { margin-top: 0; padding: 31px 36px 35px; border: 1px solid var(--border); background: #faf9f4; }
 .award-item { border-top: 1px solid var(--border); display: grid; grid-template-columns: 90px 1fr; gap: 25px; padding: 17px 0; }
 .award-item:last-child { padding-bottom: 0; }
 .award-item span { color: #728d7a; font-size: 14px; font-weight: 700; }
@@ -313,7 +306,6 @@ html[lang="zh-CN"] .name-waveform figcaption { font-style: normal; }
 html[lang="zh-CN"] .research-card h3 { letter-spacing: .01em; }
 @media (max-width: 950px) {
   .talks-layout { gap: 40px; }
-  .education-item { grid-template-columns: 145px 1fr; }
 }
 @media (max-width: 690px) {
   .research-grid { grid-template-columns: 1fr; }
@@ -324,9 +316,6 @@ html[lang="zh-CN"] .research-card h3 { letter-spacing: .01em; }
   .talks-layout .section-heading { margin-bottom: 30px; }
   .talks-content .update-item { grid-template-columns: 59px minmax(0, 1fr); }
   .talks-content .update-item h3 { font-size: 17px; }
-  .education-item { grid-template-columns: 1fr; gap: 9px; padding: 24px 0; }
-  .education-item h3 { font-size: 21px; }
-  .education-dates { font-size: 17px; }
   .awards-block { padding: 24px 21px; }
   .award-item { grid-template-columns: 53px 1fr; gap: 12px; }
   .pub-year { font-size: 20px; }

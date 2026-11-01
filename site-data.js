@@ -178,32 +178,6 @@ window.SITE_DATA = {
       venue: { en: '14th Phonetic Conference of China · Lanzhou', zh: '第十四届中国语音学学术会议 · 兰州' }
     }
   ],
-  education: [
-    {
-      dates: { en: '2022–2026', zh: '2022—2026' },
-      award: { en: 'Ph.D. in Linguistics', zh: '语言学及应用语言学 · 文学博士' },
-      institution: { en: 'Zhejiang University · School of Literature', zh: '浙江大学 · 文学院' },
-      detail: { en: 'Linguistic typology', zh: '研究方向：语言类型学' }
-    },
-    {
-      dates: { en: '2024–2025', zh: '2024—2025' },
-      award: { en: 'Joint Ph.D. research training', zh: '联合培养博士研究生' },
-      institution: { en: 'École pratique des hautes études (EPHE–PSL), Paris', zh: '巴黎高等研究实践学院（EPHE–PSL）' },
-      detail: { en: 'CSC-supported doctoral research visit', zh: 'CSC 公派赴法联合培养' }
-    },
-    {
-      dates: { en: '2019–2022', zh: '2019—2022' },
-      award: { en: 'M.A. in Asian and African Languages and Literatures', zh: '亚非语言文学 · 文学硕士' },
-      institution: { en: 'Yunnan Minzu University', zh: '云南民族大学 · 南亚东南亚语言文化学院' },
-      detail: { en: '', zh: '' }
-    },
-    {
-      dates: { en: '2015–2019', zh: '2015—2019' },
-      award: { en: 'B.A. in Chinese Ethnic Minority Language and Literature', zh: '中国少数民族语言文学 · 文学学士' },
-      institution: { en: 'Yunnan Minzu University', zh: '云南民族大学' },
-      detail: { en: '', zh: '' }
-    }
-  ],
   awards: [
     {
       year: '2025',
