@@ -141,30 +141,34 @@ window.SITE_DATA = {
       venue: { en: '红河学院学报 (Journal of Honghe University) · 2021(4): 6–11', zh: '《红河学院学报》2021 年第 4 期，6–11 页' }, links: []
     }
   ],
+  // Preserve presentation titles in the language in which they were delivered.
+  // On the Chinese page, the international (Norway) conference keeps its English name,
+  // while conferences held in China use their Chinese names; the English page retains English venue labels.
+  // Journal article titles and publication citations are never changed in this section.
   talks: [
     {
       year: '2025',
-      title: { en: 'Categorical perception of Mandarin T2-T3 in Hani-Mandarin bilingual children: The influence of preceding and following speech context effect', zh: '哈尼语—普通话双语儿童普通话二声、三声的范畴感知：前后语音语境的影响' },
-      venue: { en: '34th European Second Language Association Conference · Tromsø, Norway', zh: '第 34 届欧洲第二语言协会年会 · 挪威特罗姆瑟' }
+      title: 'Categorical perception of Mandarin T2–T3 in Hani–Mandarin bilingual children: Effects of preceding and following phonetic contexts.',
+      venue: 'EuroSLA 34 (34th Conference of the European Second Language Association) · UiT The Arctic University of Norway · Tromsø, Norway'
     },
     {
       year: '2024',
-      title: { en: 'Production and categorical perception of Mandarin tones in Hani-Mandarin bilingual children', zh: '哈尼语—普通话双语儿童普通话声调的产出与范畴感知' },
-      venue: { en: 'Second Language Research: Multiple Perspectives · Nanchang University', zh: '“多视角二语研究”国际学术研讨会 · 南昌大学' }
+      title: 'Production and categorical perception of Mandarin tones in Hani–Mandarin bilingual children.',
+      venue: { en: 'Second Language Research: Multiple Perspectives · Nanchang University · Nanchang, China', zh: '“多视角二语研究”国际学术研讨会 · 南昌大学' }
     },
     {
       year: '2023',
-      title: { en: 'Nominalizations in Standard Thai', zh: '标准泰语的名物化现象' },
-      venue: { en: '7th National Graduate Academic Forum in Chinese Language and Literature · Guangxi University', zh: '第七届中文学科全国研究生学术论坛 · 广西大学' }
+      title: 'Nominalizations in standard Thai.',
+      venue: { en: '7th National Graduate Academic Forum in Chinese Language and Literature · Guangxi University · Nanning, China', zh: '第七届中文学科全国研究生学术论坛 · 广西大学' }
     },
     {
       year: '2023',
-      title: { en: '哈尼语量词的冠词化：个体计量到有定指称 [The grammaticalization of Hani classifiers into articles]', zh: '哈尼语量词的冠词化：个体计量到有定指称' },
+      title: { en: '哈尼语量词的冠词化：个体计量到有定指称 [The grammaticalization of Hani classifiers into articles: From individuation to definite reference]', zh: '哈尼语量词的冠词化：个体计量到有定指称' },
       venue: { en: 'New Perspectives in Studies of Classifiers · Wuhan University', zh: '“量词研究新视野：东亚及东南亚量词研究”国际研讨会 · 武汉大学' }
     },
     {
       year: '2022',
-      title: { en: '绿春哈尼语「箸」源流考 [On the origin of dʑu⁵⁵da⁵⁵ in Luchun Hani]', zh: '绿春哈尼语「箸」源流考' },
+      title: { en: '绿春哈尼语「箸」源流考 [On the origin of dʑu⁵⁵da⁵⁵ (“chopsticks”) in Luchun Hani]', zh: '绿春哈尼语「箸」源流考' },
       venue: { en: '15th Annual Academic Meeting of Minority Languages of China · Yunnan Minzu University', zh: '《民族语文》第 15 届学术年会 · 云南民族大学' }
     },
     {
