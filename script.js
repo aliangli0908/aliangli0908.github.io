@@ -8,7 +8,7 @@
       siteLabel: 'LINGUISTICS / LANGUAGE', skipLink: 'Skip to content', brandLabel: 'Go to homepage',
       navLabel: 'Main navigation', openNavigation: 'Open navigation', closeNavigation: 'Close navigation',
       languageLabel: 'Choose language', filterLabel: 'Filter publications',
-      waveformCaption: 'My name, in sound.', waveformAlt: 'Waveform of Aliang Li’s spoken name',
+      waveformAlt: 'Waveform of Aliang Li’s spoken name',
       navAbout: 'About', navResearch: 'Research', navPublications: 'Publications', navTalks: 'Talks', navHonors: 'Honors', navContact: 'Contact',
       heroEyebrow: 'LINGUISTICS · LANGUAGE & CHANGE', heroPrefix: "Hello, I'm", exploreResearch: 'Explore my research', viewPublications: 'Publications',
       sectionAboutSmall: 'ABOUT', sectionAbout: 'About me', atAGlance: 'AT A GLANCE', fieldPosition: 'POSITION', fieldInstitution: 'AFFILIATION', fieldDegree: 'DOCTORATE',
@@ -27,7 +27,7 @@
       siteLabel: '语言学 / LINGUISTICS', skipLink: '跳转到主要内容', brandLabel: '返回主页',
       navLabel: '主导航', openNavigation: '打开导航菜单', closeNavigation: '关闭导航菜单',
       languageLabel: '切换网站语言', filterLabel: '筛选论文',
-      waveformCaption: '我的名字，化作声音。', waveformAlt: '李阿亮姓名的语音波形图',
+      waveformAlt: '李阿亮姓名的语音波形图',
       navAbout: '关于', navResearch: '研究方向', navPublications: '学术论文', navTalks: '学术报告', navHonors: '学术荣誉', navContact: '联系',
       heroEyebrow: '语言学 · 结构、演变与习得', heroPrefix: '你好，我是', exploreResearch: '了解我的研究', viewPublications: '阅读学术成果',
       sectionAboutSmall: '关于', sectionAbout: '关于我', atAGlance: '个人信息', fieldPosition: '现任职务', fieldInstitution: '工作单位', fieldDegree: '博士学位',
@@ -122,7 +122,9 @@
     const figure=$('#name-waveform-figure'), wave=$('#name-waveform'), path=safeUrl(p.waveformUrl);
     if(figure && wave) {figure.classList.toggle('hidden',!path);if(path)wave.src=path;wave.alt=copy().waveformAlt;}
     $('#about-copy').innerHTML=(p.bio||[]).map(para=>`<p>${esc(local(para))}</p>`).join('');
-    const cv=safeUrl(p.cvUrl);
+    // Only the English website offers the English CV.
+    // Keep CV links completely absent from the Chinese view (also from keyboard focus).
+    const cv=state.lang === 'en' ? safeUrl(p.cvUrl) : '';
     $$('#cv-link, #hero-cv-link').forEach(link=>{
       link.classList.toggle('hidden', !cv);
       if(cv) link.href=cv;

@@ -1,40 +1,31 @@
-# 李阿亮 / Aliang Li — 双语学术个人主页（GitHub Pages 发布版）
+# Aliang Li · 李阿亮 | 双语学术个人主页
 
-这是一个纯静态网站：`index.html`、`styles.css`、`site-data.js`、`script.js` 和相关资源已经全部包含在内，不需要 Node.js、数据库或构建命令。
+本文件夹是 **完整的 GitHub Pages 版本**。将文件夹内部所有内容上传到 GitHub 仓库 `aliangli0908/aliangli0908.github.io` 的根目录，即可发布/更新：
 
-## 免费托管（首次部署）
+- 主页地址：https://aliangli0908.github.io/
+- 上传页面：https://github.com/aliangli0908/aliangli0908.github.io/upload/main
 
-1. 前往 https://github.com/signup 创建 GitHub Free 账户，完成邮箱验证。
-2. 新建 **Public** 仓库，名称必须是 `<你的 GitHub 用户名>.github.io`。你的用户名是 `aliangli0908`，仓库名应为 **`aliangli0908.github.io`**。不要勾选自动生成 README（压缩包里已经有 README）。
-3. 解压此 ZIP，将**解压目录内的文件和文件夹**（不是 ZIP 文件，也不是外层目录）拖入 GitHub 的上传界面。确保 `index.html` 在仓库根目录，可以直接看到 `index.html`、`styles.css`、`script.js`、`site-data.js`、`assets/`、`files/`。`.nojekyll` 是可选的隐藏文件，没上传它也可以正常显示本站。
-4. 上传文件后，在下方提交更改（Commit changes）。
-5. 进入仓库 `Settings → Pages → Build and deployment`，`Source` 选择 `Deploy from a branch`，`Branch` 选择 `main` 和 `/(root)`，保存。
-6. 访问 `https://aliangli0908.github.io/`，测试 `https://aliangli0908.github.io/?lang=zh` 和 `https://aliangli0908.github.io/?lang=en` 两个页面，检查论文链接与英文 CV。
+> **本版更新：** 中文主页和中文版论文栏目不再出现“英文简历 [pdf]”；英文版首页和 Publications 仍保留 CV [pdf] 链接。切换语言时 CV 入口同步显示/隐藏。
 
-官方说明： https://docs.github.com/en/pages/quickstart
+## 上传方法
 
-## 文件和功能
+1. 如果下载的是 ZIP，先解压，再**打开解压后的文件夹**。
+2. 全选文件夹**里面**的内容（包括 `assets/` 和 `files/`），直接拖到 GitHub 的 Upload files 页面。**不要上传 ZIP 本身；不要多加一层外层文件夹。**
+3. GitHub 识别上传完成后点击 **Commit changes**。同一路径/文件名的旧文件可以直接被替换，**不必删除整个仓库**，否则会丢失原有设置。
+4. 现有 GitHub Pages 配置保持 `Deploy from a branch`、`main`、`/(root)` 即可。部署完成后用 `Ctrl+F5` 刷新网址。
 
-- **`index.html`** 必须在仓库根目录，不要再多包一层文件夹。
-- **`assets/name-waveform.png`**：名字声波图。
-- **`files/cv/Aliang_Li_CV.pdf`**：用户指定的英文 CV PDF（原样拷贝，不提供 Word）。
-- **`files/papers/`**：6 篇上传的论文 PDF；对应论文后的 `[pdf]` 可打开文件。
-- **`site-data.js`**：学术内容、研究方向、论文列表和资源链接。
-- **`script.js`**：中英双语显示与交互逻辑。
-- **`styles.css`**：视觉样式。
-- **`.nojekyll`**：可选的 GitHub Pages 静态站点标记。
+> 本包与之前的网站目录结构一致。最安全的全量更新方法是直接覆盖，不建议先删除 GitHub 仓库（repository）。上传不会把 Git 提交历史清空。
 
-## 正式公开前务必阅读
+## 完整文件说明
 
-- **版权授权**：6 篇论文 PDF 中包含期刊排版或数据库下载版本。只有在出版社/期刊的自存档政策允许公开传播时，才应上传这些版本到公开仓库。否则请在 `site-data.js` 中把对应条目的 `links` 改成合法可公开的作者稿或 DOI 链接，并删除 `files/papers/` 中相应 PDF。`Public` 仓库内的所有内容都可以被其他人访问及下载。
-- **隐私**：公开仓库不是私密备份。仔细检查 CV 以及页面上的邮件、任职信息是否愿意公开；切勿上传身份证、密码、手机号码等敏感信息。
-- **发表信息**：网站显示 2026 年《语言学论丛》论文的实际标题《哈尼语递进性差比式构式研究》；英文 CV 保持你提供的 PDF 原文，不做自动改动。
-- **SEO/检索**：此版本已去除原稿 `noindex, nofollow` 元标签。但 Google/Bing/百度收录仍不保证，尤其 GitHub Pages 在中国大陆的访问质量因网络而异。
+- `index.html`：中英文主页，已移除姓名声波文字说明和教育经历栏目
+- `styles.css`：白底、黑灰字的极简学术排版
+- `script.js` 和 `site-data.js`：中英文切换、论文、学术报告、筛选等功能；英文原题保留；中文页国内会议名称为中文、国外会议名称为英文
+- `assets/`：声波图和 favicon（仅黑白灰）
+- `files/cv/Aliang_Li_CV.pdf`：你最后指定的 **Aliang Li_CV.pdf**，原样保存，只提供 PDF；**仅英文页面显示 CV 链接，中文页面不显示**
+- `files/papers/`：六篇原始论文 PDF，论文标题后有对应的 `[pdf]` 链接
+- `.nojekyll`：可选的 GitHub Pages 设置文件（隐藏文件，Windows 可能不显示）
 
-## 后续更新
+## 正式公开的注意事项
 
-1. 修改相应网页文件或论文 PDF。
-2. 在 GitHub 仓库 `Add file → Upload files` 上传并覆盖对应文件，提交修改。
-3. GitHub Pages 会根据配置自动重新部署。
-
-若将来绑定独立域名，可以在 `Settings → Pages → Custom domain` 中配置。
+Public 仓库中的网站和 PDF 对所有访问者公开。请确认这六份期刊 PDF 的公开分享授权（尤其是出版商排版版的自存档政策），以及 CV 中信息适合公开；不允许公开的版本应替换为作者稿或 DOI 链接。
